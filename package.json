@@ -1,9 +1,12 @@
 {
   "name": "@synaphea/merkle-tree",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Our merkle tree implementation",
   "main": "index.js",
-  "keywords": ["merkle", "tree"],
+  "keywords": [
+    "merkle",
+    "tree"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/theofilis/merkle-tree.git"
