@@ -7,7 +7,10 @@ export class MerkleTree {
     return this._root;
   }
 
-  constructor(private _items: Array<string>) {
+  constructor(
+    private _items: Array<string>,
+    private _hashFun: Function = CryptoJS.SHA256
+  ) {
     this._root = "";
   }
 
@@ -28,7 +31,7 @@ export class MerkleTree {
     for (var index = 0; index < items.length; index = index + 2) {
       let left = items[index];
       let right = items[index + 1] || "";
-      tempItems.push(CryptoJS.SHA256(left + right).toString());
+      tempItems.push(this._hashFun(left + right).toString());
     }
 
     return tempItems;
