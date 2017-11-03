@@ -1,8 +1,13 @@
 {
-  "name": "synaphea-merkle-tree",
+  "name": "@synaphea/merkle-tree",
   "version": "1.0.0",
   "description": "Our merkle tree implementation",
   "main": "index.js",
+  "keywords": ["merkle", "tree"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theofilis/merkle-tree.git"
+  },
   "scripts": {
     "build": "./node_modules/.bin/webpack",
     "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha -r ts-node/register test/**/*.spec.ts"
@@ -27,7 +32,7 @@
     "instrument": true
   },
   "author": "George Theofilis",
-  "license": "ISC",
+  "license": "GPL-3.0",
   "devDependencies": {
     "@types/chai": "^4.0.4",
     "@types/crypto-js": "^3.1.37",
