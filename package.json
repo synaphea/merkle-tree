@@ -12,8 +12,9 @@
     "url": "https://github.com/theofilis/merkle-tree.git"
   },
   "scripts": {
+    "compile": "node-gyp rebuild",
     "build": "./node_modules/.bin/webpack",
-    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha -r ts-node/register test/**/*.spec.ts"
+    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha --timeout 5000 -b -r ts-node/register test/**/*.spec.ts"
   },
   "nyc": {
     "include": [
@@ -43,20 +44,21 @@
     "@types/node": "^8.0.24",
     "@types/webpack": "^3.0.10",
     "awesome-typescript-loader": "^3.2.3",
+    "ajv": "^5.2.2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
-    "casper-chai": "^0.3.0",
-    "casperjs": "^1.1.4",
     "chai": "^4.1.1",
     "crypto-js": "^3.1.9-1",
     "mocha": "^3.5.0",
     "mocha-casperjs": "^0.6.0",
+    "nan": "^2.7.0",
+    "node-gyp": "^3.6.2",
+    "node-loader": "^0.6.0",
     "npm-install-webpack-plugin": "^4.0.5",
     "nyc": "^11.1.0",
-    "phantomjs": "^2.1.7",
     "ts-node": "^3.3.0",
     "tslint": "^5.6.0",
     "tslint-config-standard": "^6.0.1",

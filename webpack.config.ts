@@ -15,6 +15,9 @@ const config: webpack.Configuration = {
       exclude: /node_modules/,
       loader: 'awesome-typescript-loader',
       test: /\.ts(x?)$/
+    }, {
+      test: /\.node$/,
+      loader: 'node-loader'
     }]
   },
   output: {
