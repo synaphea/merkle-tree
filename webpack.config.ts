@@ -8,8 +8,8 @@ declare var __dirname: any;
 
 const config: webpack.Configuration = {
   target: 'node',
-  context: `${__dirname}/src/`,
-  entry: './App.ts',
+  context: `${__dirname}/lib/`,
+  entry: './index.ts',
   module: {
     rules: [{
       exclude: /node_modules/,
@@ -21,7 +21,7 @@ const config: webpack.Configuration = {
     }]
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   },
   plugins: [

@@ -1,6 +1,6 @@
 import * as CryptoJS from "crypto-js";
 
-import { MerkleTree } from "../src/Tree";
+import { MerkleTree } from "../lib/Tree";
 
 import { expect } from "chai";
 
