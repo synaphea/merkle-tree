@@ -1,6 +1,9 @@
 import Hash from '../lib/index';
+import * as CryptoJS from 'crypto-js';
 
 import { expect } from 'chai';
+
+const N = 100;
 
 describe(`Check hash libraries`, () => {
   it('MD5 tests', () => {
@@ -8,5 +11,37 @@ describe(`Check hash libraries`, () => {
   });
   it('adler32 tests', () => {
     expect(Hash.hash('adler32', 'testing')).to.equal('0c1e02ff');
+  });
+
+  it('Bench MD5 tests (native)', () => {
+    console.time('Bench MD5 tests (native)');
+    for (let i = 0; i < N; i ++) {
+      const res = Hash.hash('md2', `testing ${i}`);
+    }
+    console.timeEnd('Bench MD5 tests (native)');
+  });
+
+  it('Bench MD5 tests (js)', () => {
+    console.time('Bench MD5 tests (js)');
+    for (let i = 0; i < N; i ++) {
+      const res = CryptoJS.MD5(`testing ${i}`);
+    }
+    console.timeEnd('Bench MD5 tests (js)');
+  });
+
+  it('Bench SHA256 tests (native)', () => {
+    console.time('Bench SHA256 tests (native)');
+    for (let i = 0; i < N; i ++) {
+      const res = Hash.hash('sha256', `testing ${i}`);
+    }
+    console.timeEnd('Bench SHA256 tests (native)');
+  });
+
+  it('Bench SHA256 tests (js)', () => {
+    console.time('Bench SHA256 tests (js)');
+    for (let i = 0; i < N; i ++) {
+      const res = CryptoJS.SHA256(`testing ${i}`);
+    }
+    console.timeEnd('Bench SHA256 tests (js)');
   });
 });
