@@ -1,13 +1,20 @@
 import * as CryptoJS from 'crypto-js';
+import Hash from '../lib/index';
 
 import { MerkleTree } from '../lib/Tree';
 
 import { expect } from 'chai';
 
+const Native = {
+  SHA256: (x: string) => {
+    return Hash.hash('sha256', x);
+  }
+};
+
 const N = 10;
 const M = 100;
-const name = ['SHA1', 'SHA256', 'SHA512'];
-const methods = [CryptoJS.SHA1, CryptoJS.SHA256, CryptoJS.SHA512];
+const name = ['SHA1', 'SHA256', 'Native.SHA256', 'SHA512'];
+const methods = [CryptoJS.SHA1, CryptoJS.SHA256, Native.SHA256, CryptoJS.SHA512];
 const results = [
   [
     '6e55a0a66dde5974df130a556ac1b8f2c80862ed',
