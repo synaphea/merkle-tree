@@ -34,3 +34,9 @@ jobs:
     steps:
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
       - run: npm publish
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - publish
