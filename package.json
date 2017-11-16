@@ -1,6 +1,6 @@
 {
   "name": "@synaphea/merkle-tree",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Our merkle tree implementation",
   "main": "index.js",
   "keywords": [
