@@ -23,10 +23,14 @@ jobs:
       - store_test_results:
           path: results
   publish:
+    docker:
+      - image: circleci/node:8.5
+    requires:
+      - build
+    working_directory: ~/repo
     filters:
       tags:
         only: /v[0-9]+(\.[0-9]+)*/
-    requires:
-      - build
     steps:
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+      - run: npm publish
