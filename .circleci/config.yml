@@ -38,6 +38,6 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - publish
+      - publish:
         requires:
           - build
