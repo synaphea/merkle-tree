@@ -3,11 +3,15 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
+
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/node:8.5
+
 jobs:
   build:
-    docker:
-      - image: circleci/node:8.5
-    working_directory: ~/repo
+    <<: *defaults
     steps:
       - checkout
       - restore_cache:
@@ -23,9 +27,7 @@ jobs:
       - store_test_results:
           path: results
   publish:
-    docker:
-      - image: circleci/node:8.5
-    working_directory: ~/repo
+    <<: *defaults
     steps:
       - checkout
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
