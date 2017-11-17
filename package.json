@@ -14,7 +14,7 @@
   "scripts": {
     "compile": "node-gyp rebuild",
     "build": "./node_modules/.bin/webpack",
-    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha --timeout 5000 -b -r ts-node/register test/**/*.spec.ts"
+    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha --reporter mocha-circleci-reporter --timeout 10000 -b -r ts-node/register test/**/*.spec.ts"
   },
   "nyc": {
     "include": [
@@ -53,6 +53,7 @@
     "chai": "^4.1.1",
     "crypto-js": "^3.1.9-1",
     "mocha": "^3.5.0",
+    "mocha-circleci-reporter": "^0.0.2",
     "nan": "^2.7.0",
     "node-gyp": "^3.6.2",
     "node-loader": "^0.6.0",

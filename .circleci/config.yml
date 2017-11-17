@@ -8,6 +8,9 @@ defaults: &defaults
   working_directory: ~/repo
   docker:
     - image: circleci/node:8.5
+  branches:
+      only:
+        - master
 
 jobs:
   build:
@@ -25,13 +28,14 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: npm run test
       - store_test_results:
-          path: results
+          path: ~/repo/test-results.xml
+
   publish:
     <<: *defaults
     steps:
-      - checkout
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
       - run: npm publish
+
 workflows:
   version: 2
   build_and_test:
