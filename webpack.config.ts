@@ -21,7 +21,7 @@ const config: webpack.Configuration = {
     }]
   },
   output: {
-    filename: '[name].js',
+    filename: 'index.js',
     path: path.resolve(__dirname, 'dist')
   },
   plugins: [
