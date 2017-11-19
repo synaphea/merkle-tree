@@ -4,10 +4,7 @@
   "description": "Our merkle tree implementation",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
-  "keywords": [
-    "merkle",
-    "tree"
-  ],
+  "keywords": ["merkle", "tree"],
   "repository": {
     "type": "git",
     "url": "https://github.com/theofilis/merkle-tree.git"
@@ -15,25 +12,15 @@
   "scripts": {
     "compile": "node-gyp rebuild",
     "prepublish": "npm run build",
-    "build": "./node_modules/.bin/webpack",
-    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha --reporter mocha-circleci-reporter --timeout 10000 -b -r ts-node/register test/**/*.spec.ts"
+    "build": "./node_modules/.bin/tsc -p tsconfig.json",
+    "test":
+      "./node_modules/.bin/nyc ./node_modules/.bin/mocha --reporter mocha-circleci-reporter --timeout 10000 -b -r ts-node/register test/**/*.spec.ts"
   },
   "nyc": {
-    "include": [
-      "src/**/*.ts",
-      "src/**/*.tsx"
-    ],
-    "extension": [
-      ".ts",
-      ".tsx"
-    ],
-    "require": [
-      "ts-node/register"
-    ],
-    "reporter": [
-      "text-summary",
-      "html"
-    ],
+    "include": ["src/**/*.ts", "src/**/*.tsx"],
+    "extension": [".ts", ".tsx"],
+    "require": ["ts-node/register"],
+    "reporter": ["text-summary", "html"],
     "sourceMap": true,
     "instrument": true
   },
@@ -44,7 +31,6 @@
     "@types/crypto-js": "^3.1.37",
     "@types/mocha": "^2.2.42",
     "@types/node": "^8.0.24",
-    "@types/webpack": "^3.0.10",
     "awesome-typescript-loader": "^3.2.3",
     "ajv": "^5.2.2",
     "babel-cli": "^6.26.0",
@@ -59,14 +45,11 @@
     "nan": "^2.7.0",
     "node-gyp": "^3.6.2",
     "node-loader": "^0.6.0",
-    "npm-install-webpack-plugin": "^4.0.5",
     "nyc": "^11.1.0",
     "ts-node": "^3.3.0",
     "tslint": "^5.6.0",
     "tslint-config-standard": "^6.0.1",
     "typescript": "^2.4.2",
-    "webpack": "^3.5.5",
-    "webpack-cleanup-plugin": "^0.5.1",
     "native-ext-loader": "^1.0.0"
   }
 }

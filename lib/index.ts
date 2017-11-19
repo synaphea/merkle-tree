@@ -1,6 +1,5 @@
-export interface IModule {
-}
+export interface IModule {}
 
-const lib: any = require('./binding/module.node');
+const lib: any = require("../lib/binding/module.node");
 
 export default lib;

@@ -2,7 +2,7 @@
   "targets": [
     {
       "include_dirs": [
-        "deps/mhash/include", 
+        "deps/mhash/include",
         "<!(node -e \"require('nan')\")"
       ],
       "target_name": "module",

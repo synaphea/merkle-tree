@@ -6,19 +6,12 @@
     "lib": ["es6", "dom"],
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "declaration": true,
     "declarationDir": "dist/types",
+    "outDir": "dist",
     "allowSyntheticDefaultImports": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "typeRoots": ["node_modules/@types"]
   },
-  "awesomeTypescriptLoaderOptions": {
-    "useBabel": true,
-    "useCache": true
-  },
-  "include": [
-    "src"
-  ]
+  "files": ["lib/index.ts"]
 }
