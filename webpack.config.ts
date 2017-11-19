@@ -1,28 +1,31 @@
-import * as path from 'path';
-import * as webpack from 'webpack';
+import * as path from "path";
+import * as webpack from "webpack";
 
-const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
-const NpmInstallPlugin = require('npm-install-webpack-plugin');
+const WebpackCleanupPlugin = require("webpack-cleanup-plugin");
+const NpmInstallPlugin = require("npm-install-webpack-plugin");
 
 declare var __dirname: any;
 
 const config: webpack.Configuration = {
-  target: 'node',
+  target: "node",
   context: `${__dirname}/lib/`,
-  entry: './index.ts',
+  entry: "./index.ts",
   module: {
-    rules: [{
-      exclude: /node_modules/,
-      loader: 'awesome-typescript-loader',
-      test: /\.ts(x?)$/
-    }, {
-      test: /\.node$/,
-      loader: 'node-loader'
-    }]
+    rules: [
+      {
+        exclude: /node_modules/,
+        loader: "awesome-typescript-loader",
+        test: /\.ts(x?)$/
+      },
+      {
+        test: /\.node$/,
+        loader: "native-ext-loader"
+      }
+    ]
   },
   output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: "index.js",
+    path: path.resolve(__dirname, "dist")
   },
   plugins: [
     new WebpackCleanupPlugin(),
@@ -34,7 +37,7 @@ const config: webpack.Configuration = {
       // Reduce amount of console logging
       quiet: false,
       // npm command used inside company, yarn is not supported yet
-      npm: 'npm'
+      npm: "npm"
     })
   ]
 };

@@ -4,10 +4,7 @@
   "description": "Our merkle tree implementation",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
-  "keywords": [
-    "merkle",
-    "tree"
-  ],
+  "keywords": ["merkle", "tree"],
   "repository": {
     "type": "git",
     "url": "https://github.com/theofilis/merkle-tree.git"
@@ -16,24 +13,14 @@
     "compile": "node-gyp rebuild",
     "prepublish": "npm run build",
     "build": "./node_modules/.bin/webpack",
-    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha --reporter mocha-circleci-reporter --timeout 10000 -b -r ts-node/register test/**/*.spec.ts"
+    "test":
+      "./node_modules/.bin/nyc ./node_modules/.bin/mocha --reporter mocha-circleci-reporter --timeout 10000 -b -r ts-node/register test/**/*.spec.ts"
   },
   "nyc": {
-    "include": [
-      "src/**/*.ts",
-      "src/**/*.tsx"
-    ],
-    "extension": [
-      ".ts",
-      ".tsx"
-    ],
-    "require": [
-      "ts-node/register"
-    ],
-    "reporter": [
-      "text-summary",
-      "html"
-    ],
+    "include": ["src/**/*.ts", "src/**/*.tsx"],
+    "extension": [".ts", ".tsx"],
+    "require": ["ts-node/register"],
+    "reporter": ["text-summary", "html"],
     "sourceMap": true,
     "instrument": true
   },
@@ -66,6 +53,7 @@
     "tslint-config-standard": "^6.0.1",
     "typescript": "^2.4.2",
     "webpack": "^3.5.5",
-    "webpack-cleanup-plugin": "^0.5.1"
+    "webpack-cleanup-plugin": "^0.5.1",
+    "native-ext-loader": "^1.0.0"
   }
 }
