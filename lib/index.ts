@@ -1,7 +1,11 @@
 export { MerkleTree } from './Tree';
 
-export interface IModule {}
+export interface IHashFunctions {
+  hash: (type: string, value: string) => string;
+}
 
-const lib: any = require('../lib/binding/module.node');
+const Hash: IHashFunctions = require('../lib/binding/module.node');
 
-export default lib;
+export {
+  Hash
+};

@@ -1,4 +1,4 @@
-import Hash from '../lib/index';
+import { Hash } from '../lib/index';
 import * as CryptoJS from 'crypto-js';
 
 import { expect } from 'chai';
