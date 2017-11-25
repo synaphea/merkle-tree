@@ -1,60 +1,55 @@
 import * as CryptoJS from 'crypto-js';
 
-export interface MerkleTreePath {
-  right?: string;
-  left?: string;
-}
+import { MerkleTreePath } from './MerkleeProofPath';
+import { MerkleeTreeNode } from './MerkleeTreeNode';
 
-class MerkleeTreeNode {
-  _left: MerkleeTreeNode;
-  _right: MerkleeTreeNode;
-  _value: string;
-
-  constructor () {
-    this._value = '';
-  }
-
-  set left (value: MerkleeTreeNode) {
-    this._left = value;
-  }
-
-  set right (value: MerkleeTreeNode) {
-    this._right = value;
-  }
-
-  set value (value: string) {
-    this._value = value;
-  }
-
-  get left (): MerkleeTreeNode {
-    return this._left || new MerkleeTreeNode();
-  }
-
-  get right (): MerkleeTreeNode {
-    return this._right || new MerkleeTreeNode();
-  }
-
-  get value (): string {
-    return this._value;
-  }
-}
-
-export class MerkleTreeValidator {
-  private _root: MerkleeTreeNode;
+export abstract class MerkleeTreeAbstract {
+  protected _items: Array<string>;
+  protected _hashFun: Function;
+  protected _root: MerkleeTreeNode;
 
   get root (): string {
-    return this._root.value;
+    return this._root.value.toString();
   }
 
+  getLeafNodes (): Array<MerkleeTreeNode> {
+    return this._items.map((item) => {
+      const node = new MerkleeTreeNode();
+      node.value = this._hashFun(item);
+      return node;
+    });
+  }
+
+  getLeafHashes (): Array<string> {
+    return this._items.map((item) => {
+      return this._hashFun(item);
+    });
+  }
+}
+
+export class MerkleTreeValidator extends MerkleeTreeAbstract {
   constructor (
-    private _items: Array<string>,
-    private _hashFun: Function = CryptoJS.SHA256
+    _items: Array<string>,
+     _hashFun: Function = CryptoJS.SHA256
   ) {
+    super();
+    this._items = _items;
+    this._hashFun = _hashFun;
     this._root = new MerkleeTreeNode();
   }
 
+  getProofPath (value: string): Array<MerkleTreePath> {
+    const node = new MerkleeTreeNode();
+    node.value = this._hashFun(value);
+    return this.visit (this._root, node);
+  }
+
   create (): void {
-    const items = this.getNodes(this._items);
+    if (this._items.length === 0) {
+      return;
+    }
+
+    const items = this.getLeafNodes();
 
     let level = this.calculate(items);
 
@@ -64,6 +59,44 @@ export class MerkleTreeValidator {
     this._root = level[0];
   }
 
+  private visit (root: MerkleeTreeNode, node: MerkleeTreeNode): Array<MerkleTreePath> {
+    if (root.isLeaf()) {
+      return [];
+    }
+
+    if (root.left.value.toString() === node.value.toString()) {
+      return [{
+        right: root.right.value.toString()
+      }];
+    }
+
+    if (root.right.value.toString() === node.value.toString()) {
+      return [{
+        left: root.left.value.toString()
+      }];
+    }
+
+    let items = this.visit(root.left, node);
+    if (items.length > 0) {
+      return this.concatPath(items, {
+        right: root.right.value.toString()
+      });
+    }
+    items = this.visit(root.right, node);
+    if (items.length > 0) {
+      return this.concatPath(items, {
+        left: root.left.value.toString()
+      });
+    }
+
+    return [];
+  }
+
+  private concatPath (path: Array<MerkleTreePath>, node: MerkleTreePath): Array<MerkleTreePath> {
+    path.push(node);
+    return path;
+  }
+
   private calculate (items: Array<MerkleeTreeNode>): Array<MerkleeTreeNode> {
     const tempItems: Array<MerkleeTreeNode> = [];
 
@@ -71,22 +104,13 @@ export class MerkleTreeValidator {
       const node = new MerkleeTreeNode();
       node.left = items[index];
       node.right = items[index + 1];
-      node.value = this._hashFun(node._left.value + node._right.value);
+      node.value = this._hashFun(node.left.value + node.right.value);
       tempItems.push(node);
     }
 
     return tempItems;
   }
-
-  private getNodes (value: Array<string>): Array<MerkleeTreeNode> {
-    return value.map((item) => {
-      const node = new MerkleeTreeNode();
-      node.value = this._hashFun(item);
-      return node;
-    });
-  }
 }
-
 export class MerkleTree {
   private _root: string;
 
