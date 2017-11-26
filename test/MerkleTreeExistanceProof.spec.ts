@@ -1,6 +1,6 @@
 import * as CryptoJS from 'crypto-js';
 
-import { MerkleTreeValidator } from '../lib/Tree';
+import { MerkleTreeExistanceProof } from '../lib/MerkleeTreeExistanceProof';
 
 import { expect } from 'chai';
 
@@ -9,7 +9,7 @@ const _hashFun = CryptoJS.SHA256;
 describe(`[Even] Create a Merkle tree`, () => {
   it('Check the creation of merklee tree', () => {
     const items = ['a', 'b', 'c', 'd'];
-    const tree = new MerkleTreeValidator(items, _hashFun);
+    const tree = new MerkleTreeExistanceProof(items, _hashFun);
     tree.create();
     expect(tree.root).to.equal(
       '58c89d709329eb37285837b042ab6ff72c7c8f74de0446b091b6a0131c102cfd'
@@ -18,7 +18,7 @@ describe(`[Even] Create a Merkle tree`, () => {
 
   it('[Odd] Check the creation of merklee tree', () => {
     const items = ['a', 'b', 'c', 'd', 'e'];
-    const tree = new MerkleTreeValidator(items, _hashFun);
+    const tree = new MerkleTreeExistanceProof(items, _hashFun);
     tree.create();
     expect(tree.root).to.equal(
       'd6246621103b5050cf32df614c5017e91853d47a19fe5d3e7c68a8f4588f5b66'
@@ -27,7 +27,7 @@ describe(`[Even] Create a Merkle tree`, () => {
 
   it('[Empty] Check the creation of merklee tree', () => {
     const items: Array<any> = [];
-    const tree = new MerkleTreeValidator(items, _hashFun);
+    const tree = new MerkleTreeExistanceProof(items, _hashFun);
     tree.create();
     expect(tree.root).to.equal(
       ''
@@ -36,7 +36,7 @@ describe(`[Even] Create a Merkle tree`, () => {
 
   it('Get existance proof for an item', () => {
     const items = ['a', 'b', 'c', 'd'];
-    const tree = new MerkleTreeValidator(items, _hashFun);
+    const tree = new MerkleTreeExistanceProof(items, _hashFun);
 
     tree.create();
     expect(tree.getProofPath('a')).to.deep.equal([

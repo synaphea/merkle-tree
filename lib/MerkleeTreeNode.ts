@@ -1,10 +1,17 @@
 export class MerkleeTreeNode {
-  _left: MerkleeTreeNode;
-  _right: MerkleeTreeNode;
-  _value: string;
 
-  constructor () {
+  private _left: MerkleeTreeNode | undefined;
+  private _right: MerkleeTreeNode | undefined;
+  private _value: string;
+
+  constructor (left?: MerkleeTreeNode, right?: MerkleeTreeNode) {
     this._value = '';
+    this._left = left;
+    this._right = right;
+  }
+
+  isEmpty (): boolean {
+    return this._value === '' && this.isLeaf();
   }
 
   isLeaf (): boolean {

@@ -1,4 +1,4 @@
-export { MerkleTree } from './Tree';
+export { MerkleTreeSimple } from './Tree';
 
 export interface IHashFunctions {
   hash: (type: string, value: string) => string;
