@@ -41,21 +41,21 @@ methods.forEach((method, index) => {
   describe(`[${name[index]}] Create a Merkle tree`, () => {
     it('Create a new tree (Even number of items)', () => {
       const items = ['a', 'b', 'c', 'd'];
-      const tree = new MerkleTree(items, method);
+      const tree = new MerkleeTreeSimple(items, method);
       tree.create();
       expect(tree.root).to.equal(res[0]);
     });
 
     it('Create a new tree (Odd number of items)', () => {
       const items = ['a', 'b', 'c'];
-      const tree = new MerkleTree(items, method);
+      const tree = new MerkleeTreeSimple(items, method);
       tree.create();
       expect(tree.root).to.equal(res[1]);
     });
 
     it('Create a new tree (Empty)', () => {
       const items: Array<string> = [];
-      const tree = new MerkleTree(items, method);
+      const tree = new MerkleeTreeSimple(items, method);
       tree.create();
       expect(tree.root).to.equal(res[2]);
     });
@@ -69,7 +69,7 @@ methods.forEach((method, index) => {
 
       console.time(`Bench tree with hash (${name[index]})`);
       for (let i = 0; i < N; i ++) {
-        const tree = new MerkleTree(items, method);
+        const tree = new MerkleeTreeSimple(items, method);
         tree.create();
       }
       console.timeEnd(`Bench tree with hash (${name[index]})`);
