@@ -1,5 +1,5 @@
 import * as CryptoJS from 'crypto-js';
-import { Hash, MerkleTree } from '../lib/index';
+import { Hash, MerkleeTreeSimple } from '../lib/index';
 
 import { expect } from 'chai';
 
