@@ -1,4 +1,4 @@
-export { MerkleeTreeSimple } from './MerkleeTreeSimple';
+export { MerkleTreeSimple } from './MerkleTreeSimple';
 export { MerkleTreeExistanceProof } from './MerkleTreeExistanceProof';
 
 export interface IHashFunctions {

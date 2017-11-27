@@ -1,9 +1,9 @@
 import * as CryptoJS from 'crypto-js';
 
-import { MerkleeTreeNode } from './MerkleeTreeNode';
-import { MerkleeTreeBase } from './MerkleeTreeBase';
+import { MerkleTreeNode } from './MerkleTreeNode';
+import { MerkleTreeBase } from './MerkleTreeBase';
 
-export class MerkleeTreeSimple extends MerkleeTreeBase {
+export class MerkleTreeSimple extends MerkleTreeBase {
   private _root: string;
 
   get root (): string {

@@ -1,8 +1,8 @@
 import * as CryptoJS from 'crypto-js';
 
-import { MerkleeTreeNode } from './MerkleeTreeNode';
+import { MerkleTreeNode } from './MerkleTreeNode';
 
-export abstract class MerkleeTreeBase {
+export abstract class MerkleTreeBase {
   protected _items: Array<string>;
   protected _hashFun: Function;
 
@@ -14,9 +14,9 @@ export abstract class MerkleeTreeBase {
     this._hashFun = _hashFun;
   }
 
-  getLeafNodes (): Array<MerkleeTreeNode> {
+  getLeafNodes (): Array<MerkleTreeNode> {
     return this._items.map((item) => {
-      const node = new MerkleeTreeNode();
+      const node = new MerkleTreeNode();
       node.value = this._hashFun(item);
       return node;
     });

@@ -1,11 +1,11 @@
 import * as CryptoJS from 'crypto-js';
 
-import { MerkleTreePath } from './MerkleeProofPath';
-import { MerkleeTreeNode } from './MerkleeTreeNode';
-import { MerkleeTreeBase } from './MerkleeTreeBase';
+import { MerkleTreePath } from './MerkleProofPath';
+import { MerkleTreeNode } from './MerkleTreeNode';
+import { MerkleTreeBase } from './MerkleTreeBase';
 
-export class MerkleTreeExistanceProof extends MerkleeTreeBase {
-  protected _root: MerkleeTreeNode;
+export class MerkleTreeExistanceProof extends MerkleTreeBase {
+  protected _root: MerkleTreeNode;
 
   constructor (
     _items: Array<string>,
@@ -13,7 +13,7 @@ export class MerkleTreeExistanceProof extends MerkleeTreeBase {
   ) {
     super(_items, _hashFun);
 
-    this._root = new MerkleeTreeNode();
+    this._root = new MerkleTreeNode();
   }
 
   get root (): string {
@@ -21,7 +21,7 @@ export class MerkleTreeExistanceProof extends MerkleeTreeBase {
   }
 
   getProofPath (value: string): Array<MerkleTreePath> {
-    const node = new MerkleeTreeNode();
+    const node = new MerkleTreeNode();
     node.value = this._hashFun(value);
     return this.visit (this._root, node);
   }
@@ -41,7 +41,7 @@ export class MerkleTreeExistanceProof extends MerkleeTreeBase {
     this._root = level[0];
   }
 
-  private visit (root: MerkleeTreeNode, node: MerkleeTreeNode): Array<MerkleTreePath> {
+  private visit (root: MerkleTreeNode, node: MerkleTreeNode): Array<MerkleTreePath> {
     if (root.isLeaf()) {
       return [];
     }
@@ -79,11 +79,11 @@ export class MerkleTreeExistanceProof extends MerkleeTreeBase {
     return path;
   }
 
-  private calculate (items: Array<MerkleeTreeNode>): Array<MerkleeTreeNode> {
-    const tempItems: Array<MerkleeTreeNode> = [];
+  private calculate (items: Array<MerkleTreeNode>): Array<MerkleTreeNode> {
+    const tempItems: Array<MerkleTreeNode> = [];
 
     for (let index = 0; index < items.length; index = index + 2) {
-      const node = new MerkleeTreeNode();
+      const node = new MerkleTreeNode();
       node.left = items[index];
       node.right = items[index + 1];
       node.value = this._hashFun(node.left.value + node.right.value);

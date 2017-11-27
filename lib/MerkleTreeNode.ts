@@ -1,10 +1,10 @@
-export class MerkleeTreeNode {
+export class MerkleTreeNode {
 
-  private _left: MerkleeTreeNode | undefined;
-  private _right: MerkleeTreeNode | undefined;
+  private _left: MerkleTreeNode | undefined;
+  private _right: MerkleTreeNode | undefined;
   private _value: string;
 
-  constructor (left?: MerkleeTreeNode, right?: MerkleeTreeNode) {
+  constructor (left?: MerkleTreeNode, right?: MerkleTreeNode) {
     this._value = '';
     this._left = left;
     this._right = right;
@@ -18,11 +18,11 @@ export class MerkleeTreeNode {
     return this._left == null && this._right == null;
   }
 
-  set left (value: MerkleeTreeNode) {
+  set left (value: MerkleTreeNode) {
     this._left = value;
   }
 
-  set right (value: MerkleeTreeNode) {
+  set right (value: MerkleTreeNode) {
     this._right = value;
   }
 
@@ -30,12 +30,12 @@ export class MerkleeTreeNode {
     this._value = value;
   }
 
-  get left (): MerkleeTreeNode {
-    return this._left || new MerkleeTreeNode();
+  get left (): MerkleTreeNode {
+    return this._left || new MerkleTreeNode();
   }
 
-  get right (): MerkleeTreeNode {
-    return this._right || new MerkleeTreeNode();
+  get right (): MerkleTreeNode {
+    return this._right || new MerkleTreeNode();
   }
 
   get value (): string {
