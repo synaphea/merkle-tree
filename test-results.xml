@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.23500000000000001" tests="27" failures="0">
+  <testsuite name="Root Suite" timestamp="2017-11-27T20:39:39" tests="0" failures="0" time="0">
+  </testsuite>
+  <testsuite name="Check hash libraries" timestamp="2017-11-27T20:39:39" tests="6" file="/mnt/hgfs/Documents/GitHub/merkle-tree/test/Hash.spec.ts" failures="0" time="0.016">
+    <testcase name="Check hash libraries MD5 tests" time="0.001" classname="MD5 tests">
+    </testcase>
+    <testcase name="Check hash libraries adler32 tests" time="0" classname="adler32 tests">
+    </testcase>
+    <testcase name="Check hash libraries Bench MD5 tests (native)" time="0.002" classname="Bench MD5 tests (native)">
+    </testcase>
+    <testcase name="Check hash libraries Bench MD5 tests (js)" time="0.004" classname="Bench MD5 tests (js)">
+    </testcase>
+    <testcase name="Check hash libraries Bench SHA256 tests (native)" time="0.001" classname="Bench SHA256 tests (native)">
+    </testcase>
+    <testcase name="Check hash libraries Bench SHA256 tests (js)" time="0.008" classname="Bench SHA256 tests (js)">
+    </testcase>
+  </testsuite>
+  <testsuite name="Create a node" timestamp="2017-11-27T20:39:39" tests="1" file="/mnt/hgfs/Documents/GitHub/merkle-tree/test/MerkleeTreeNode.spec.ts" failures="0" time="0.001">
+    <testcase name="Create a node Check the creation of a node" time="0.001" classname="Check the creation of a node">
+    </testcase>
+  </testsuite>
+  <testsuite name="[SHA1] Create a Merkle tree" timestamp="2017-11-27T20:39:39" tests="4" file="/mnt/hgfs/Documents/GitHub/merkle-tree/test/MerkleeTreeSimple.spec.ts" failures="0" time="0.039">
+    <testcase name="[SHA1] Create a Merkle tree Create a new tree (Even number of items)" time="0.001" classname="Create a new tree (Even number of items)">
+    </testcase>
+    <testcase name="[SHA1] Create a Merkle tree Create a new tree (Odd number of items)" time="0" classname="Create a new tree (Odd number of items)">
+    </testcase>
+    <testcase name="[SHA1] Create a Merkle tree Create a new tree (Empty)" time="0" classname="Create a new tree (Empty)">
+    </testcase>
+    <testcase name="[SHA1] Create a Merkle tree Bench create a new tree" time="0.038" classname="Bench create a new tree">
+    </testcase>
+  </testsuite>
+  <testsuite name="[SHA256] Create a Merkle tree" timestamp="2017-11-27T20:39:39" tests="4" file="/mnt/hgfs/Documents/GitHub/merkle-tree/test/MerkleeTreeSimple.spec.ts" failures="0" time="0.034">
+    <testcase name="[SHA256] Create a Merkle tree Create a new tree (Even number of items)" time="0" classname="Create a new tree (Even number of items)">
+    </testcase>
+    <testcase name="[SHA256] Create a Merkle tree Create a new tree (Odd number of items)" time="0" classname="Create a new tree (Odd number of items)">
+    </testcase>
+    <testcase name="[SHA256] Create a Merkle tree Create a new tree (Empty)" time="0" classname="Create a new tree (Empty)">
+    </testcase>
+    <testcase name="[SHA256] Create a Merkle tree Bench create a new tree" time="0.034" classname="Bench create a new tree">
+    </testcase>
+  </testsuite>
+  <testsuite name="[Native.SHA256] Create a Merkle tree" timestamp="2017-11-27T20:39:39" tests="4" file="/mnt/hgfs/Documents/GitHub/merkle-tree/test/MerkleeTreeSimple.spec.ts" failures="0" time="0.006">
+    <testcase name="[Native.SHA256] Create a Merkle tree Create a new tree (Even number of items)" time="0" classname="Create a new tree (Even number of items)">
+    </testcase>
+    <testcase name="[Native.SHA256] Create a Merkle tree Create a new tree (Odd number of items)" time="0" classname="Create a new tree (Odd number of items)">
+    </testcase>
+    <testcase name="[Native.SHA256] Create a Merkle tree Create a new tree (Empty)" time="0" classname="Create a new tree (Empty)">
+    </testcase>
+    <testcase name="[Native.SHA256] Create a Merkle tree Bench create a new tree" time="0.006" classname="Bench create a new tree">
+    </testcase>
+  </testsuite>
+  <testsuite name="[SHA512] Create a Merkle tree" timestamp="2017-11-27T20:39:39" tests="4" file="/mnt/hgfs/Documents/GitHub/merkle-tree/test/MerkleeTreeSimple.spec.ts" failures="0" time="0.135">
+    <testcase name="[SHA512] Create a Merkle tree Create a new tree (Even number of items)" time="0.002" classname="Create a new tree (Even number of items)">
+    </testcase>
+    <testcase name="[SHA512] Create a Merkle tree Create a new tree (Odd number of items)" time="0.003" classname="Create a new tree (Odd number of items)">
+    </testcase>
+    <testcase name="[SHA512] Create a Merkle tree Create a new tree (Empty)" time="0" classname="Create a new tree (Empty)">
+    </testcase>
+    <testcase name="[SHA512] Create a Merkle tree Bench create a new tree" time="0.13" classname="Bench create a new tree">
+    </testcase>
+  </testsuite>
+  <testsuite name="[Even] Create a Merkle tree" timestamp="2017-11-27T20:39:40" tests="4" file="/mnt/hgfs/Documents/GitHub/merkle-tree/test/MerkleTreeExistanceProof.spec.ts" failures="0" time="0.004">
+    <testcase name="[Even] Create a Merkle tree Check the creation of merklee tree" time="0.001" classname="Check the creation of merklee tree">
+    </testcase>
+    <testcase name="[Even] Create a Merkle tree [Odd] Check the creation of merklee tree" time="0.001" classname="[Odd] Check the creation of merklee tree">
+    </testcase>
+    <testcase name="[Even] Create a Merkle tree [Empty] Check the creation of merklee tree" time="0" classname="[Empty] Check the creation of merklee tree">
+    </testcase>
+    <testcase name="[Even] Create a Merkle tree Get existance proof for an item" time="0.002" classname="Get existance proof for an item">
+    </testcase>
+  </testsuite>
+</testsuites>
