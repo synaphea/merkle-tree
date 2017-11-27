@@ -1,6 +1,6 @@
 import * as CryptoJS from 'crypto-js';
 
-import { MerkleTreeExistanceProof } from '../lib/MerkleeTreeExistanceProof';
+import { MerkleTreeExistanceProof } from '../lib/MerkleTreeExistanceProof';
 
 import { expect } from 'chai';
 
