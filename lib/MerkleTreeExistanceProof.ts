@@ -41,6 +41,10 @@ export class MerkleTreeExistanceProof extends MerkleTreeBase {
     this._root = level[0];
   }
 
+  getHash (value: string): string {
+    return this._hashFun(value).toString();
+  }
+
   private visit (root: MerkleTreeNode, node: MerkleTreeNode): Array<MerkleTreePath> {
     if (root.isLeaf()) {
       return [];
