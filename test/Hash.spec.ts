@@ -14,34 +14,26 @@ describe(`Check hash libraries`, () => {
   });
 
   it('Bench MD5 tests (native)', () => {
-    console.time('Bench MD5 tests (native)');
     for (let i = 0; i < N; i ++) {
       const res = Hash.hash('md2', `testing ${i}`);
     }
-    console.timeEnd('Bench MD5 tests (native)');
   });
 
   it('Bench MD5 tests (js)', () => {
-    console.time('Bench MD5 tests (js)');
     for (let i = 0; i < N; i ++) {
       const res = CryptoJS.MD5(`testing ${i}`);
     }
-    console.timeEnd('Bench MD5 tests (js)');
   });
 
   it('Bench SHA256 tests (native)', () => {
-    console.time('Bench SHA256 tests (native)');
     for (let i = 0; i < N; i ++) {
       const res = Hash.hash('sha256', `testing ${i}`);
     }
-    console.timeEnd('Bench SHA256 tests (native)');
   });
 
   it('Bench SHA256 tests (js)', () => {
-    console.time('Bench SHA256 tests (js)');
     for (let i = 0; i < N; i ++) {
       const res = CryptoJS.SHA256(`testing ${i}`);
     }
-    console.timeEnd('Bench SHA256 tests (js)');
   });
 });

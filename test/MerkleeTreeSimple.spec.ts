@@ -67,12 +67,10 @@ methods.forEach((method, index) => {
         items.push(`item ${i}`);
       }
 
-      console.time(`Bench tree with hash (${name[index]})`);
       for (let i = 0; i < N; i ++) {
         const tree = new MerkleTreeSimple(items, method);
         tree.create();
       }
-      console.timeEnd(`Bench tree with hash (${name[index]})`);
     });
   });
 });

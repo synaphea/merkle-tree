@@ -16,7 +16,7 @@
     "compile": "node-gyp rebuild",
     "prepublish": "npm run build",
     "build": "./node_modules/.bin/tsc -p tsconfig.json",
-    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha --reporter mocha-circleci-reporter --timeout 10000 -b -r ts-node/register test/**/*.spec.ts"
+    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha --reporter mocha-circleci-reporter --slow 0.0001 --timeout 10000 -b -r ts-node/register test/**/*.spec.ts"
   },
   "nyc": {
     "include": [
