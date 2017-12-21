@@ -13,19 +13,44 @@
     },
 		{
 			"target_name" : "libmhash",
-			"type" : "none",
-			"actions" :
-			[
-				{
-					"action_name" : "test",
-					 # a hack to run deps/mhash ./configure during `node-gyp configure`
-					'inputs': ['<!@(sh scripts/libmhash-config.sh)'],
-					'outputs': [''],
-					'action': [
-					# run deps/mhash `make`
-					'sh', 'scripts/libmhash-build.sh'
-					]
-				}
+			"type" : "none",			
+			'conditions': [
+				[
+					'OS=="win"',
+					{						
+					}
+				],
+				[
+					'OS=="mac"',
+					{
+						"actions" :	[
+							{
+								"action_name" : "test",
+								'inputs': ['<!@(sh scripts/libmhash-config.sh)'],
+								'outputs': [''],
+								'action': [
+									'sh', 'scripts/libmhash-build.sh'
+								]
+							}
+						],
+					}
+				],
+				[
+					'OS!="win"',
+					{
+						"actions" :
+						[
+							{
+								"action_name" : "test",
+								'inputs': ['<!@(sh scripts/libmhash-config.sh)'],
+								'outputs': [''],
+								'action': [
+									'sh', 'scripts/libmhash-build.sh'
+								]
+							}
+						],
+					}
+				]
 			]
 		}
   ]

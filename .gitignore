@@ -4,3 +4,4 @@
 node_modules
 coverage
 build
+node_libmhash_configure.out

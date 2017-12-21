@@ -1,18 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const CryptoJS = require("crypto-js");
-const MerkleeTreeNode_1 = require("./MerkleeTreeNode");
-const MerkleeTreeBase_1 = require("./MerkleeTreeBase");
-class MerkleTreeExistanceProof extends MerkleeTreeBase_1.MerkleeTreeBase {
+const MerkleTreeNode_1 = require("./MerkleTreeNode");
+const MerkleTreeBase_1 = require("./MerkleTreeBase");
+class MerkleTreeExistanceProof extends MerkleTreeBase_1.MerkleTreeBase {
     constructor(_items, _hashFun = CryptoJS.SHA256) {
         super(_items, _hashFun);
-        this._root = new MerkleeTreeNode_1.MerkleeTreeNode();
+        this._root = new MerkleTreeNode_1.MerkleTreeNode();
     }
     get root() {
         return this._root.value.toString();
     }
     getProofPath(value) {
-        const node = new MerkleeTreeNode_1.MerkleeTreeNode();
+        const node = new MerkleTreeNode_1.MerkleTreeNode();
         node.value = this._hashFun(value);
         return this.visit(this._root, node);
     }
@@ -26,6 +26,9 @@ class MerkleTreeExistanceProof extends MerkleeTreeBase_1.MerkleeTreeBase {
             level = this.calculate(level);
         }
         this._root = level[0];
+    }
+    getHash(value) {
+        return this._hashFun(value).toString();
     }
     visit(root, node) {
         if (root.isLeaf()) {
@@ -62,7 +65,7 @@ class MerkleTreeExistanceProof extends MerkleeTreeBase_1.MerkleeTreeBase {
     calculate(items) {
         const tempItems = [];
         for (let index = 0; index < items.length; index = index + 2) {
-            const node = new MerkleeTreeNode_1.MerkleeTreeNode();
+            const node = new MerkleTreeNode_1.MerkleTreeNode();
             node.left = items[index];
             node.right = items[index + 1];
             node.value = this._hashFun(node.left.value + node.right.value);
