@@ -1,5 +1,6 @@
 import * as CryptoJS from 'crypto-js';
-import { Hash, MerkleTreeSimple } from '../lib/index';
+import { MerkleTreeSimple } from '../src/MerkleTreeSimple';
+import { Hash } from '@synaphea/mhash';
 
 import { expect } from 'chai';
 

@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-expression */
 import * as CryptoJS from 'crypto-js';
 
-import { MerkleTreeNode } from '../lib/MerkleTreeNode';
+import { MerkleTreeNode } from '../src/MerkleTreeNode';
 
 import { expect } from 'chai';
 

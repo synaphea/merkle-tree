@@ -6,13 +6,7 @@
     "noImplicitAny": true,
     "strictNullChecks": true,
     "sourceMap": false,
-    "declaration": true,
-    "declarationDir": "dist/types",
-    "outDir": "dist",
+    "declaration": false,
     "typeRoots": ["node_modules/@types"]
-  },
-  "files": [
-    "src/MerkleTreeSimple.ts",
-    "src/MerkleTreeExistanceProof.ts"
-  ]
+  }
 }
