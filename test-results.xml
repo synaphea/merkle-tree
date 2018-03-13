@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="0.24600000000000002" tests="21" failures="0">
-  <testsuite name="Root Suite" timestamp="2018-03-13T09:42:22" tests="0" failures="0" time="0">
+<testsuites name="Mocha Tests" time="10.748" tests="21" failures="0">
+  <testsuite name="Root Suite" timestamp="2018-03-13T12:41:15" tests="0" failures="0" time="0">
   </testsuite>
-  <testsuite name="Create a node" timestamp="2018-03-13T09:42:22" tests="1" file="/mnt/c/Projects/merkle-tree/test/MerkleeTreeNode.spec.ts" failures="0" time="0.001">
-    <testcase name="Create a node Check the creation of a node" time="0.001" classname="Check the creation of a node">
+  <testsuite name="Create a node" timestamp="2018-03-13T12:41:15" tests="1" file="/mnt/c/Projects/merkle-tree/test/MerkleeTreeNode.spec.ts" failures="0" time="0.002">
+    <testcase name="Create a node Check the creation of a node" time="0.002" classname="Check the creation of a node">
     </testcase>
   </testsuite>
-  <testsuite name="[SHA1] Create a Merkle tree" timestamp="2018-03-13T09:42:22" tests="4" file="/mnt/c/Projects/merkle-tree/test/MerkleeTreeSimple.spec.ts" failures="0" time="0.038000000000000006">
-    <testcase name="[SHA1] Create a Merkle tree Create a new tree (Even number of items)" time="0.003" classname="Create a new tree (Even number of items)">
+  <testsuite name="[SHA1] Create a Merkle tree" timestamp="2018-03-13T12:41:15" tests="4" file="/mnt/c/Projects/merkle-tree/test/MerkleeTreeSimple.spec.ts" failures="0" time="1.024">
+    <testcase name="[SHA1] Create a Merkle tree Create a new tree (Even number of items)" time="0.002" classname="Create a new tree (Even number of items)">
     </testcase>
     <testcase name="[SHA1] Create a Merkle tree Create a new tree (Odd number of items)" time="0" classname="Create a new tree (Odd number of items)">
     </testcase>
     <testcase name="[SHA1] Create a Merkle tree Create a new tree (Empty)" time="0" classname="Create a new tree (Empty)">
     </testcase>
-    <testcase name="[SHA1] Create a Merkle tree Bench create a new tree" time="0.035" classname="Bench create a new tree">
+    <testcase name="[SHA1] Create a Merkle tree Bench create a new tree" time="1.022" classname="Bench create a new tree">
     </testcase>
   </testsuite>
-  <testsuite name="[SHA256] Create a Merkle tree" timestamp="2018-03-13T09:42:22" tests="4" file="/mnt/c/Projects/merkle-tree/test/MerkleeTreeSimple.spec.ts" failures="0" time="0.039">
-    <testcase name="[SHA256] Create a Merkle tree Create a new tree (Even number of items)" time="0.002" classname="Create a new tree (Even number of items)">
+  <testsuite name="[SHA256] Create a Merkle tree" timestamp="2018-03-13T12:41:16" tests="4" file="/mnt/c/Projects/merkle-tree/test/MerkleeTreeSimple.spec.ts" failures="0" time="1.322">
+    <testcase name="[SHA256] Create a Merkle tree Create a new tree (Even number of items)" time="0.001" classname="Create a new tree (Even number of items)">
     </testcase>
     <testcase name="[SHA256] Create a Merkle tree Create a new tree (Odd number of items)" time="0.001" classname="Create a new tree (Odd number of items)">
     </testcase>
     <testcase name="[SHA256] Create a Merkle tree Create a new tree (Empty)" time="0" classname="Create a new tree (Empty)">
     </testcase>
-    <testcase name="[SHA256] Create a Merkle tree Bench create a new tree" time="0.036" classname="Bench create a new tree">
+    <testcase name="[SHA256] Create a Merkle tree Bench create a new tree" time="1.32" classname="Bench create a new tree">
     </testcase>
   </testsuite>
-  <testsuite name="[Native.SHA256] Create a Merkle tree" timestamp="2018-03-13T09:42:22" tests="4" file="/mnt/c/Projects/merkle-tree/test/MerkleeTreeSimple.spec.ts" failures="0" time="0.008">
-    <testcase name="[Native.SHA256] Create a Merkle tree Create a new tree (Even number of items)" time="0" classname="Create a new tree (Even number of items)">
+  <testsuite name="[Native.SHA256] Create a Merkle tree" timestamp="2018-03-13T12:41:18" tests="4" file="/mnt/c/Projects/merkle-tree/test/MerkleeTreeSimple.spec.ts" failures="0" time="0.437">
+    <testcase name="[Native.SHA256] Create a Merkle tree Create a new tree (Even number of items)" time="0.003" classname="Create a new tree (Even number of items)">
     </testcase>
-    <testcase name="[Native.SHA256] Create a Merkle tree Create a new tree (Odd number of items)" time="0.001" classname="Create a new tree (Odd number of items)">
+    <testcase name="[Native.SHA256] Create a Merkle tree Create a new tree (Odd number of items)" time="0" classname="Create a new tree (Odd number of items)">
     </testcase>
     <testcase name="[Native.SHA256] Create a Merkle tree Create a new tree (Empty)" time="0" classname="Create a new tree (Empty)">
     </testcase>
-    <testcase name="[Native.SHA256] Create a Merkle tree Bench create a new tree" time="0.007" classname="Bench create a new tree">
+    <testcase name="[Native.SHA256] Create a Merkle tree Bench create a new tree" time="0.434" classname="Bench create a new tree">
     </testcase>
   </testsuite>
-  <testsuite name="[SHA512] Create a Merkle tree" timestamp="2018-03-13T09:42:22" tests="4" file="/mnt/c/Projects/merkle-tree/test/MerkleeTreeSimple.spec.ts" failures="0" time="0.153">
-    <testcase name="[SHA512] Create a Merkle tree Create a new tree (Even number of items)" time="0.003" classname="Create a new tree (Even number of items)">
+  <testsuite name="[SHA512] Create a Merkle tree" timestamp="2018-03-13T12:41:18" tests="4" file="/mnt/c/Projects/merkle-tree/test/MerkleeTreeSimple.spec.ts" failures="0" time="7.96">
+    <testcase name="[SHA512] Create a Merkle tree Create a new tree (Even number of items)" time="0.002" classname="Create a new tree (Even number of items)">
     </testcase>
-    <testcase name="[SHA512] Create a Merkle tree Create a new tree (Odd number of items)" time="0.003" classname="Create a new tree (Odd number of items)">
+    <testcase name="[SHA512] Create a Merkle tree Create a new tree (Odd number of items)" time="0.002" classname="Create a new tree (Odd number of items)">
     </testcase>
     <testcase name="[SHA512] Create a Merkle tree Create a new tree (Empty)" time="0" classname="Create a new tree (Empty)">
     </testcase>
-    <testcase name="[SHA512] Create a Merkle tree Bench create a new tree" time="0.147" classname="Bench create a new tree">
+    <testcase name="[SHA512] Create a Merkle tree Bench create a new tree" time="7.956" classname="Bench create a new tree">
     </testcase>
   </testsuite>
-  <testsuite name="[Even] Create a Merkle tree" timestamp="2018-03-13T09:42:23" tests="4" file="/mnt/c/Projects/merkle-tree/test/MerkleTreeExistanceProof.spec.ts" failures="0" time="0.007">
-    <testcase name="[Even] Create a Merkle tree Check the creation of merklee tree" time="0.003" classname="Check the creation of merklee tree">
+  <testsuite name="[Even] Create a Merkle tree" timestamp="2018-03-13T12:41:26" tests="4" file="/mnt/c/Projects/merkle-tree/test/MerkleTreeExistanceProof.spec.ts" failures="0" time="0.003">
+    <testcase name="[Even] Create a Merkle tree Check the creation of merklee tree" time="0.001" classname="Check the creation of merklee tree">
     </testcase>
-    <testcase name="[Even] Create a Merkle tree [Odd] Check the creation of merklee tree" time="0.002" classname="[Odd] Check the creation of merklee tree">
+    <testcase name="[Even] Create a Merkle tree [Odd] Check the creation of merklee tree" time="0" classname="[Odd] Check the creation of merklee tree">
     </testcase>
     <testcase name="[Even] Create a Merkle tree [Empty] Check the creation of merklee tree" time="0" classname="[Empty] Check the creation of merklee tree">
     </testcase>
