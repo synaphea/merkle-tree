@@ -14,8 +14,9 @@
   },
   "scripts": {
     "prepare": "npm run build",
-    "build": "./node_modules/.bin/tsc -p tsconfig.json",
-    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha --reporter mocha-circleci-reporter --slow 0.0001 --timeout 10000 -b -r ts-node/register -P tsconfig.test.json test/**/*.spec.ts"
+    "build": "npx tsc -p tsconfig.json",
+    "report-coverage": "npx nyc report --reporter=text-lcov > coverage.lcov && npx codecov --token=a31d5466-220d-48fe-8d2f-183a2d1a83cb",
+    "test": "npx nyc ./node_modules/.bin/mocha --reporter mocha-circleci-reporter --slow 0.0001 --timeout 10000 -b -r ts-node/register -P tsconfig.test.json test/**/*.spec.ts"
   },
   "nyc": {
     "include": [
@@ -45,6 +46,7 @@
     "@types/mocha": "2.2.42",
     "@types/node": "8.0.24",
     "chai": "4.1.1",
+    "codecov": "3.0.0",
     "mocha": "3.5.0",
     "mocha-circleci-reporter": "0.0.2",
     "nyc": "11.1.0",
