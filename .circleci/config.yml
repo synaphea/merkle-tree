@@ -26,6 +26,8 @@ jobs:
       - run: npm run test
       - store_test_results:
           path: ~/repo/test-results.xml
+      - store_artifacts:
+          path: ~/repo/test-results.xml
 
   publish:
     <<: *defaults
