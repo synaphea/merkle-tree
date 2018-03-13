@@ -31,9 +31,9 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+      # - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
       - run: npm install
-      - run: npm publish
+      # - run: npm publish
 
 workflows:
   version: 2
