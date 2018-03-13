@@ -1,6 +1,6 @@
 # Merkle Root
 
-[![CircleCI](https://img.shields.io/circleci/project/github/theofilis/merkle-tree.svg?style=for-the-badge)]()
+[![CircleCI](https://img.shields.io/circleci/project/github/synaphea/merkle-tree.svg?style=for-the-badge)]()
 
 ## Publish a new release
 
